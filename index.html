@@ -63,11 +63,12 @@
   </div>
 
   <!-- Ajout du PDF déroulant -->
-  <div id="pdf-container" style="margin-top: 100px;"></div>
+  <h2 style="text-align: center; margin-top: 100px;">Document PDF complet</h2>
+  <div id="pdf-container" style="margin-top: 40px;"></div>
 </main>
 
 <script>
-  const url = 'cahierPDF'; // Remplace par ton fichier
+  const url = 'cahierPDF.pdf'; // Le fichier PDF doit être dans le même dossier
 
   const container = document.getElementById('pdf-container');
   pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
@@ -94,6 +95,9 @@
         });
       });
     }
+  }).catch(error => {
+    container.innerHTML = `<p style="color:red; text-align:center;">Erreur : le PDF n’a pas pu être chargé. Vérifie que "cahierPDF.pdf" est bien dans le dossier.</p>`;
+    console.error('Erreur de chargement PDF :', error);
   });
 </script>
 
