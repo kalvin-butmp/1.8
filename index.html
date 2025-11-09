@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CoFounder's</title>
+
+    <style>
+      /* ---------- STYLE GLOBAL ---------- */
+      * {
+        box-sizing: border-box;
+      }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #ffffff;
+      }
+
+      /* ---------- EN-TÊTE ---------- */
+      header {
+        background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+        padding: 15px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .logo img {
+        height: 100px; /* Taille augmentée */
+        width: auto;
+        display: block;
+        object-fit: contain;
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+      }
+
+      /* ---------- ICÔNES SOCIALES ---------- */
+      .social-icons {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+      }
+
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        border-radius: 8px;
+        padding: 5px;
+      }
+
+      .social-icon:hover {
+        border-color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+      }
+
+      /* ---------- BOUTONS NAVIGATION ---------- */
+      .nav-button {
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #0369a1;
+        background-color: transparent;
+      }
+
+      .nav-button:hover {
+        border-color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.5);
+        transform: translateY(-2px);
+      }
+
+      /* ---------- CONTENU PRINCIPAL ---------- */
+      main {
+        padding: 80px 40px;
+        max-width: 1400px;
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh; /* <-- IMPORTANT : plein écran */
+      }
+
+      /* ---------- TITRE PRINCIPAL ---------- */
+      #main-title {
+        color: #0369a1;
+        font-size: clamp(40px, 7vw, 70px); /* plus grand et responsive */
+        font-weight: 900;
+        margin-bottom: 40px;
+        line-height: 1.05;
+        letter-spacing: -1px;
+        text-wrap: balance;
+      }
+
+      /* ---------- DESCRIPTION ---------- */
+      #main-description {
+        color: #000000;
+        font-size: 22px;
+        line-height: 1.8;
+        max-width: 900px;
+      }
+
+      /* ---------- DEUXIÈME ÉCRAN (AJOUT) ---------- */
+      #black-screen {
+        height: 100vh;
+        background: #000;
+        color: white;
+        font-size: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* ---------- RESPONSIVE ---------- */
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .logo img {
+          height: 60px;
+        }
+
+        #main-title {
+          font-size: clamp(60px, 14vw, 160px);
+        }
+
+        #main-description {
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ---------- EN-TÊTE ---------- -->
+    <header>
+      <div class="logo">
+        <img src="logoCF.png" alt="Logo CoFounder's" />
+      </div>
+
+      <div class="nav-right">
+        <div class="social-icons">
+          <!-- Instagram -->
+          <div class="social-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="20" height="20" rx="5" stroke="#0369a1" stroke-width="2" />
+              <circle cx="12" cy="12" r="4" stroke="#0369a1" stroke-width="2" />
+              <circle cx="18" cy="6" r="1.5" fill="#0369a1" />
+            </svg>
+          </div>
+
+          <!-- Facebook -->
+          <div class="social-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                    stroke="#0369a1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </div>
+
+        <button class="nav-button" id="contact-button">Nous contacter</button>
+        <button class="nav-button" id="login-button">Se connecter</button>
+        <button class="nav-button" id="signup-button">Créer un compte</button>
+      </div>
+    </header>
+
+    <!-- ---------- CONTENU PRINCIPAL ---------- -->
+    <main>
+      <h1 id="main-title">Trouver vos futurs partenaires</h1>
+      <p id="main-description">
+        Avec CoFounder's, vous pourrez trouver vos futurs partenaires plus vite, plus facilement de projet
+        dans une multitude de domaines professionnels.
+      </p>
+    </main>
+
+    <!-- ---------- DEUXIÈME ÉCRAN AJOUTÉ ---------- -->
+    <section id="black-screen">
+      Découvrir plus bientôt…
+    </section>
+
+    <!-- ---------- SCRIPTS ---------- -->
+    <script>
+      // Simple interaction : messages temporaires
+      function showMessage(text) {
+        const message = document.createElement('div');
+        message.textContent = text;
+        message.style.cssText =
+          'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);' +
+          'background: #0369a1; color: white; padding: 20px 40px; border-radius: 10px;' +
+          'font-size: 18px; z-index: 1000;';
+        document.body.appendChild(message);
+        setTimeout(() => message.remove(), 2000);
+      }
+
+      document.getElementById('contact-button').addEventListener('click', () =>
+        showMessage('Formulaire de contact à venir !')
+      );
+      document.getElementById('login-button').addEventListener('click', () =>
+        showMessage('Page de connexion à venir !')
+      );
+      document.getElementById('signup-button').addEventListener('click', () =>
+        showMessage("Page d'inscription à venir !")
+      );
+    </script>
+  </body>
+</html>
